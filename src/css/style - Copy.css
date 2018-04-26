@@ -1,0 +1,422 @@
+/* RGB */
+/*Media query manager
+
+0-600px ------phone
+600-900px-----tablet potrait
+900-1200px ---- tablet landscape
+[1200-1800px] ---- normal style apply!
+1800+ -------------Big desktop
+
+Order base - typography - genral layout - grid - page layout - components 
+
+Argument declaration
+
+phone --phone
+tablet potrait -- tab-pot
+tablet landscape--tab-land
+Normal style -- desktop this is default value so no need to use
+big destop---big-desktop
+
+
+//media queries always work from the default font size of the browser not from our default html setting like we did 1 rem == 10 px, so we need to use em becuase it is good practice 1 em == 16 px so lets change px to em
+
+@mixin respond($breakpoint){
+
+    @if $breakpoint==big-desktop{
+
+        @media (min-width:112.5em) { @content}; //1800/16 = 112.5em
+        
+        }
+        
+@if $breakpoint==tab-land{
+
+    @media (max-width:75em) { @content  }; //1200/16= 75em
+
+}
+
+@if $breakpoint==x1000{
+
+    @media (max-width:62.5em) { @content  }; 
+
+}
+
+
+
+
+@if $breakpoint==tab-pot{
+
+    @media (max-width:56.25em) { @content  }; //56.25em
+
+}
+
+@if $breakpoint==phone{
+
+    @media (max-width:37.5em) {  @content }; // 37.5em
+
+}
+
+
+
+} */
+/* universal selectors setting*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+/* root font for rem use */
+html {
+  /* we want font size 10 px but px is not good practice for fluid 
+    font-size:10px; */
+  /*default size of browser is 16px but we want 10px in percentage*/
+  font-size: 62.5%;
+  /* fontsize 100% = 16px = 1rem, but we want is 10 px % from 16px ,1 rem = 10 px so we actually doing 10px/16px = 62.5%   */ }
+
+/* universal body setting*/
+body {
+  box-sizing: border-box;
+  font-family: 'Kalam', cursive !important;
+  font-size: 1.6rem;
+  overflow-x: hidden !important;
+  background-color: #e6d9d4; }
+
+.top-icons {
+  background-color: #e85f5c; }
+
+.icons-top a,
+.icons-top ~ h2 {
+  color: #e6d9d4;
+  font-size: 2rem;
+  transition: color 1s ease-in-out .2s; }
+  .icons-top a:hover,
+  .icons-top ~ h2:hover {
+    color: #773344; }
+
+.navbar-brand {
+  font-size: 4rem;
+  color: #e85f5c;
+  transition: color 1s ease-in-out .2s; }
+  .navbar-brand:hover {
+    color: #e6d9d4; }
+
+.bg-bar {
+  background-color: #773344; }
+
+.search-btn {
+  background-color: #773344;
+  color: #e85f5c;
+  transition: color 1s ease-in-out .2s; }
+  .search-btn:hover {
+    color: #e6d9d4; }
+
+.nav-link {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e85f5c;
+  padding: 10px,20px;
+  border-bottom: 2px solid transparent;
+  transition: all 1s ease-in-out .2s; }
+  .nav-link:hover {
+    color: #e6d9d4;
+    border-bottom: 2px solid #e6d9d4; }
+
+.navbar {
+  padding: 1rem 2rem;
+  transition: padding 1s ease; }
+
+.navbar-background {
+  padding: .2rem 2rem; }
+
+.bar-1, .bar-2, .bar-3 {
+  width: 2rem;
+  height: .3rem;
+  background-color: #e85f5c !important;
+  margin: 5px;
+  transition: all .2 ease; }
+
+.change .bar-1 {
+  transform: rotate(-45deg) translate(-5px, 6px); }
+
+.change .bar-2 {
+  opacity: 0; }
+
+.change .bar-3 {
+  transform: rotate(45deg) translate(-5px, -8px); }
+
+.nav-active {
+  color: #e6d9d4; }
+
+.navbar-toggler {
+  border: 3px solid #e85f5c;
+  padding: 1px; }
+
+#banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background-banner.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+
+#banner .banner-title {
+  font-style: italic; }
+
+#banner .banner-link {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.5rem 2.5rem;
+  border: 2px solid #e85f5c;
+  border-radius: 50px;
+  color: #e3b5a4;
+  background: transparent;
+  transition: all 1s ease; }
+  #banner .banner-link:hover {
+    color: #e6d9d4;
+    border: 2px solid #e6d9d4; }
+
+#banner .sub-title {
+  color: #e6d9d4; }
+
+#banner::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #242a33;
+  z-index: -1;
+  bottom: -60px;
+  transform-origin: left;
+  transform: skewY(3deg); }
+
+#banner-icons {
+  margin-top: -20px; }
+  #banner-icons ul {
+    list-style-type: none; }
+  #banner-icons li {
+    padding: 10px;
+    margin: 0 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #e6d9d4;
+    border-radius: 10px;
+    transition: all 1s ease .3s;
+    box-shadow: 0 0.2rem 2rem rgba(230, 217, 212, 0.4); }
+    #banner-icons li:hover {
+      border: 2px solid #e85f5c;
+      box-shadow: 0 0.3rem 3rem rgba(230, 217, 212, 0.1); }
+  #banner-icons .fa {
+    font-size: 3.2rem; }
+  #banner-icons a {
+    text-decoration: none;
+    color: #e85f5c;
+    display: block;
+    transition: color 1s ease .3s; }
+    #banner-icons a:hover {
+      color: #e6d9d4; }
+
+#services .services-icon {
+  font-size: 6rem;
+  padding: 6rem;
+  background: #773344; }
+
+.services-icon-1 {
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+
+.services-icon-2 {
+  color: #4c90f6;
+  -webkit-clip-path: polygon(16% 19%, 100% 0, 100% 100%, 16% 73%);
+  clip-path: polygon(16% 19%, 100% 0, 100% 100%, 16% 73%); }
+
+.services-icon-3 {
+  color: #a3c828;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+
+.services-icon-4 {
+  color: orangered;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+
+.fa-gears {
+  color: #e85f5c; }
+
+.title-text h1 {
+  font-size: 3rem;
+  margin-top: 1rem; }
+
+#contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background-filler-1.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%); }
+
+#contact .form-control {
+  background: transparent;
+  border: none;
+  font-size: 2.5rem;
+  border-bottom: 3px solid white;
+  color: white; }
+
+#contact .form-btn {
+  font-size: 2.5rem;
+  background: transparent;
+  color: #e85f5c;
+  border: 3px solid white; }
+  #contact .form-btn:hover {
+    background-color: #e6d9d4; }
+
+#work .fa {
+  color: #e85f5c; }
+
+/*###################################work##########################################*/
+#work button {
+  font-size: 20px;
+  padding: 15px 25px;
+  margin: 5px;
+  background-color: #242a33;
+  border-radius: 0;
+  color: #e85f5c;
+  border-radius: 10px; }
+
+#work button:hover {
+  background-color: #e85f5c;
+  color: #242a33; }
+
+#about-us {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/current-projects-1.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%); }
+
+#about-us a {
+  text-decoration: none;
+  color: #CED0CE; }
+
+#about-us .card-header {
+  background-color: #e85f5c; }
+
+#pricing .price-num {
+  background-color: #ced0ce;
+  padding: 10px 0;
+  position: relative; }
+
+#pricing .money {
+  position: absolute;
+  top: 32%;
+  left: 22%;
+  font-size: 28px; }
+
+#pricing .money-num {
+  font-size: 70px; }
+
+#pricing .money-end {
+  font-size: 25px; }
+
+#pricing .price-num::after {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #ced0ce; }
+
+#pricing .list-group-item {
+  position: relative;
+  font-size: 12px; }
+
+#pricing .first-list {
+  border-top: none !important; }
+
+#pricing .price-btn {
+  border: 2px solid #e85f5c;
+  margin-bottom: -20px;
+  text-decoration: none;
+  color: #e85f5c;
+  background-color: #fff; }
+
+#pricing .price-btn:hover {
+  background-color: #242a33;
+  border: 2px solid #242a33; }
+
+#pricing .premium .price-num {
+  background-color: #e85f5c; }
+
+#pricing .premium .price-num::after {
+  border-top: 20px solid #e85f5c; }
+
+#pricing .fa {
+  color: #e85f5c; }
+
+/*##################################footer##############*/
+#footer {
+  background-color: #7e7672; }
+
+#footer .fa {
+  color: #e85f5c;
+  font-size: 30px;
+  background-color: #2D3142;
+  padding: 5px; }
+
+#footer p {
+  color: #2D3142; }
+
+#scrollUp {
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #555;
+  color: #fff; }
+
+footer {
+  background-color: #414040;
+  text-align: center; }
+
+footer p {
+  font-size: 1.6rem;
+  padding: 2rem;
+  color: #c9c9c9; }
+
+/*
+sass 7/1 pattern order to import files and folders
+
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+@import 'vendors/bootstrap';
+@import 'vendors/jquery-ui';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'layout/navigation';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/forms';
+
+@import 'components/buttons';
+@import 'components/carousel';
+@import 'components/cover';
+@import 'components/dropdown';
+
+@import 'pages/home';
+@import 'pages/contact';
+
+@import 'themes/theme';
+@import 'themes/admin';
+
+
+
+*/

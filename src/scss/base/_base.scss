@@ -1,0 +1,62 @@
+
+/* universal selectors setting*/ 
+*,
+*::after,
+*::before
+{
+margin: 0;
+padding: 0;
+box-sizing: inherit;
+
+}
+
+/* root font for rem use */
+html{
+/* we want font size 10 px but px is not good practice for fluid 
+    font-size:10px; */
+/*default size of browser is 16px but we want 10px in percentage*/
+font-size: 62.5%;  /* fontsize 100% = 16px = 1rem, but we want is 10 px % from 16px ,1 rem = 10 px so we actually doing 10px/16px = 62.5%   */
+
+// for using media query we always use default browser font size 1 rem ==16px.
+
+
+
+//@include respond(tab-land){
+//    font-size: 50%; //9 px is 56.25% of 16 px
+//}
+//
+//@include respond(x1000){
+//    font-size: 45%; 
+//}
+//
+//@include respond(tab-pot){
+//    font-size: 40%; 
+//}
+//
+//
+//
+//
+//@include respond(phone){
+//
+//    font-size: 40%; 
+//}
+//
+//@include respond(big-desktop){
+//    font-size: 75%; //12 px is 75% of 16 px so 1 rem=12px
+//}
+
+
+}
+
+/* universal body setting*/
+body{
+//border-box in model box is using means element include padding and border in its width 
+    box-sizing: border-box;
+    font-family: 'Kalam', cursive !important; //'' used to define google font or other non standard font 
+    font-size: 1.6rem;
+    overflow-x: hidden !important;
+    
+background-color:$color-secondary-light;
+
+    
+}

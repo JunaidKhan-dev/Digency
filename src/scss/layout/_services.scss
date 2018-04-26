@@ -1,0 +1,223 @@
+#services .services-icon{
+
+font-size: 6rem;
+padding: 6rem;
+
+background: $color-primary-dark;
+
+
+
+
+}
+
+.services-icon{
+
+    &-1{
+        -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+    }
+
+    &-2{
+
+        color: #4c90f6;
+        -webkit-clip-path: polygon(16% 19%, 100% 0, 100% 100%, 16% 73%);
+clip-path: polygon(16% 19%, 100% 0, 100% 100%, 16% 73%);
+    }
+
+    &-3{
+
+        color: #a3c828;
+        -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    &-4{
+
+        color: orangered;
+        -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+ 
+
+}
+
+.fa-gears{
+    color:$color-primary;
+
+}
+
+.title-text h1{
+
+    font-size: 3rem;
+    margin-top: 1rem;
+   
+}
+
+// Subscribe Here section
+
+#contact{
+
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) 
+    ,url(../img/background-filler-1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    
+    clip-path: polygon(0 15%,100% 0, 100% 85%, 0 100%);
+
+}
+
+#contact .form-control{
+background: transparent;
+border: none;
+font-size: 2.5rem;
+border-bottom: 3px solid white;
+color: white;
+
+
+}
+
+
+#contact .form-btn{
+
+font-size: 2.5rem;
+background: transparent;
+color: $color-primary;
+border: 3px solid white;
+
+&:hover{
+    background-color: $color-secondary-light;
+}
+
+}
+
+// Projects
+
+#work .fa{
+
+   color: $color-primary;
+}
+
+/*###################################work##########################################*/
+
+
+  
+  
+  #work button {
+    font-size: 20px;
+    padding: 15px 25px;
+    margin: 5px;
+    background-color: #242a33;
+    border-radius: 0;
+    color: $color-primary;
+    border-radius: 10px;
+  }
+  
+  #work button:hover {
+    background-color: $color-primary;
+    color: #242a33;
+  }
+
+
+//   About Us Section
+
+
+
+#about-us {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/current-projects-1.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  
+  }
+  
+  
+  #about-us a {
+    text-decoration: none;
+    color: #CED0CE;
+  }
+  
+  #about-us .card-header {
+    background-color: $color-primary;
+  }
+
+//   pricing section
+
+#pricing .price-num {
+    background-color: #ced0ce;
+    padding: 10px 0;
+    position: relative;
+  }
+  
+  #pricing .money {
+    position: absolute;
+    top: 32%;
+    left: 22%;
+    font-size: 28px;
+  
+  }
+  
+  #pricing .money-num {
+    font-size: 70px;
+  }
+  
+  #pricing .money-end {
+    font-size: 25px;
+  }
+  
+  #pricing .price-num::after {
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #ced0ce;
+  }
+  
+  #pricing .list-group-item {
+    position: relative;
+    font-size: 12px;
+  
+  }
+  
+  #pricing .first-list {
+    border-top: none!important;
+  }
+  
+  
+  #pricing .price-btn {
+    border: 2px solid $color-primary;
+    margin-bottom: -20px;
+    text-decoration: none;
+    color: $color-primary;
+    background-color: #fff;
+  }
+  
+  #pricing .price-btn:hover {
+    background-color: #242a33;
+    border: 2px solid #242a33;
+  }
+  
+  #pricing .premium .price-num {
+    background-color: $color-primary;
+  }
+  
+  #pricing .premium .price-num::after {
+    border-top: 20px solid $color-primary;
+  
+  }
+
+
+  #pricing .fa{
+
+    color:$color-primary; 
+  }
+  
